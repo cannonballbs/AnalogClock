@@ -31,18 +31,11 @@ export default function Clock() {
         <Hand className="hour" rotation={clockState.hoursAng}></Hand>
         <Hand className="minute" rotation={clockState.minutesAng}></Hand>
         <Hand className="second" rotation={clockState.secondsAng}></Hand>
-        <NumberLabel value={1} />
-        <NumberLabel value={2} />
-        <NumberLabel value={3} />
-        <NumberLabel value={4} />
-        <NumberLabel value={5} />
-        <NumberLabel value={6} />
-        <NumberLabel value={7} />
-        <NumberLabel value={8} />
-        <NumberLabel value={9} />
-        <NumberLabel value={10} />
-        <NumberLabel value={11} />
-        <NumberLabel value={12} />
+        {Array(12)
+          .fill("")
+          .map((_, index) => (
+            <NumberLabel value={index + 1} />
+          ))}
       </ClockBoard>
       <Tooltip
         id="my-tooltip"
